@@ -1,0 +1,16 @@
+stages:
+  - deploy
+
+deploy_to_ec2:
+  stage: deploy
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/demokey.pem
+    - chmod 600 ~/.ssh/demokey.pem
+    - echo -e "Host 184.72.184.214\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  script:
+    - ssh -i ~/.ssh/demokey.pem ec2-user@184.72.184.214 "cd /home/ec2-user/project3tier && docker-compose -f docker-compose.yaml pull && docker-compose -f docker-compose.yaml up -d"
+  only:
+    - main
