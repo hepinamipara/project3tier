@@ -3,12 +3,6 @@
 # Use the official MySQL image from the Docker Hub
 FROM mysql:8.0
 
-# Set environment variables for MySQL
-ENV MYSQL_ROOT_PASSWORD=Hepin2004
-ENV MYSQL_DATABASE=test1
-ENV MYSQL_USER=admin
-ENV MYSQL_PASSWORD=Hepin2004
-
 # Expose MySQL port
 EXPOSE 3306
 
