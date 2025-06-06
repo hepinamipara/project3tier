@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 841162679501.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+        image: 841162679501.dkr.ecr.us-east-1.amazonaws.com/frontend:8
         ports:
         - containerPort: 80
         env:   # <-- Fixed indentation
         - name: REACT_APP_API_BASE_URL
-          value: "http://ad2084f73b7e34376bd49ec0ea55a8bb-2099085754.us-east-1.elb.amazonaws.com"
+          value: "http://adb22667dd9e942af890810cbe11180a-1370933755.us-east-1.elb.amazonaws.com"
 
 ---
 apiVersion: v1
