@@ -34,7 +34,7 @@ sudo yum -y install terraform
 
 
 #---------------------------Maven install -------------
-sudo yum install maven -y
+# sudo yum install maven -y
 
 #---------------------------kubectl install ---------------
 sudo curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
@@ -67,13 +67,13 @@ sudo chmod 777 /var/run/docker.sock
 
 
 #----------------------Trivy install---------------
-sudo rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.48.3/trivy_0.48.3_Linux-64bit.rpm
+# sudo rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.48.3/trivy_0.48.3_Linux-64bit.rpm
 
 #------------------Docker install-------------
 #sudo amazon-linux-extras install docker #linux 2022
 
 #------------------sonar install by using docker---------------
-docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+# docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 
 
 
@@ -82,12 +82,12 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 #----------------Grafana Prometheus-------------------
-helm repo add stable https://charts.helm.sh/stable
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-kubectl create namespace Prometheus
-helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+# helm repo add stable https://charts.helm.sh/stable
+# helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# kubectl create namespace Prometheus
+# helm install stable prometheus-community/kube-prometheus-stack -n prometheus
 
-echo "Initialization script completed successfully."
+# echo "Initialization script completed successfully."
 
 #----------------------sonarQube install-----------------------------------
 #sudo yum -y install wget nfs-utils
